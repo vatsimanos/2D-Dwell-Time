@@ -4,10 +4,9 @@ import matplotlib.pyplot as plt
 import time
 
 '''SETTINGS START'''
-#path = r"path_to_time_series\SNR_worst/"  # path to time series and save location for 2D-histogram
-path = r"\\BACENAS\labalz\Efthymios_LABALZ\paperDL2D\QUB_comparison_revision_2\time_series/"
-name = "SNR_best_prediction_for_QUB_id_4.txt"  # change data type accordingly
-histogram_dataset_name = "2D_histos"
+path = r"PATH_TO_TIME_SERIES/"  # path to time series and save location for 2D-histogram
+name = "NAME_OF_TIME_SERIES.txt"  # change data type accordingly
+histogram_dataset_name = "NAME_OF_2D_HISTOGRAM"
 ts = np.loadtxt(path + name)  # change data type accordingly
 
 ts = np.expand_dims(ts,axis=0)  # disable for multiple histograms
