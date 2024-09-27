@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
     histograms = np.zeros((data_size,60,60))
     for i in range(data_size):
-        histograms[i] = exe(ts[i], t_res, order, half_jump_magnitude,lower_lvl, upper_lvl)
+        histograms[i] = np.flip(exe(ts[i], t_res, order, half_jump_magnitude,lower_lvl, upper_lvl),axis = 0).T
 
     histograms = np.squeeze(histograms, axis=0)
     histograms = np.where(histograms == 0, 0, np.log10(histograms ** 2))
