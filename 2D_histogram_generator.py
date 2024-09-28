@@ -191,5 +191,4 @@ if __name__ == "__main__":
         histograms[i] = np.flip(exe(ts[i], t_res, order, half_jump_magnitude,lower_lvl, upper_lvl),axis = 0).T
 
     histograms = np.squeeze(histograms, axis=0)
-    histograms = np.where(histograms == 0, 0, np.log10(histograms ** 2))
     np.save(path + f"{histogram_dataset_name}.npy", histograms)
