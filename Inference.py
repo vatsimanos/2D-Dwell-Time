@@ -17,6 +17,7 @@ dataset = "2D_HISTOGRAM_NAME.npy"
 histo = np.load(histogram_dir+dataset)
 histo = np.expand_dims(histo,axis=0)
 histo = np.expand_dims(histo,axis=-1)
+histo = np.where(histo == 0, 0, np.log10(histo ** 2))
 
 y1,y2,y3,y4,y5,y6,y7,y8 = model.predict(histo)
 
