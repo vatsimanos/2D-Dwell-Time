@@ -8,19 +8,19 @@ import Custom_layers as cl
 
 
 #----------------SETTINGS----------------#
-save_folder = "RESULT_FOLDER"
-save_location = f"/PATH_TO_RESULT_FOLDER/{save_folder}/" # path to folder were all results of the run are saved
+save_folder = "RESULT_FOLDER" # name of the result folder
+save_location = f"/PATH_TO_RESULT_FOLDER/{save_folder}/" # path to the result folder
 
-data = "NAME_OF_DATASET.npy"          
-data_path= f'/PATH_TO_DATASET/' # directory containing training files
+data = "NAME_OF_DATASET.npy"    # name of the training dataset
+data_path= f'/PATH_TO_DATASET/' # path to the training dataset
 
 hist_dim = (60,60) # dimensions of 2D Dwell Time Histograms
-train_number = 10000
+train_number = 980000
 val_number = 10000
 test_number = 10000
 max_epochs = 1000
 global_batch_size = 1024 
-number_of_rates = 8
+number_of_rates = 8         # state number of rates / number of transitions
 rearrange_labels = True # set to True if topology is symmetric
 starting_lr = 0.001
 example_histogram_number = 20 # number of histograms from test dataset to save as images in result folder

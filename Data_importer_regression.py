@@ -24,14 +24,15 @@ class Data_importer_regression():
 
         for i in range(number):
             ts_helper = np.load(self.f1, allow_pickle=True)        
-            string_helper = re.split('_', ts_helper[0][0])
+            string_helper = re.split('_', ts_helper[0])
             position = string_helper.index('kij')
+
 
             for j in range(number_of_rates):
                 y[j][i] = (int(string_helper[position + j+1]))
 
 
-            helper_2 = ts_helper[0][1]
+            helper_2 = ts_helper[1]
             temp = helper_2[:dim1,:dim2]
             X[i] = temp
 

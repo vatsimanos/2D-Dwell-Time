@@ -4,19 +4,18 @@ import matplotlib.pyplot as plt
 import time
 
 '''SETTINGS START'''
-path = r"PATH_TO_TIME_SERIES/"  # path to time series and save location for 2D-histogram
-name = "NAME_OF_TIME_SERIES.txt"  # change data type accordingly
-histogram_dataset_name = "NAME_OF_2D_HISTOGRAM"
+path = r"ts/"  # path to time series and save location for 2D-histogram
+name = "TIME_SERIES.txt"  # name of the file of the time series
+histogram_dataset_name = "2D_HISTOGRAM_NAME.npy"  # name of the resulting Numpy file of the 2D-histogram
 ts = np.loadtxt(path + name)  # change data type accordingly
 
 ts = np.expand_dims(ts,axis=0)  # disable for multiple histograms
 
-
-lower_lvl = 20000
-upper_lvl = 22000
-sigma = 1000
+lower_lvl = 20000 # lower amplitude level
+upper_lvl = 22000 # higher amplitude level
+sigma = 1000 # the standard deviation of the noise
 sampling_frequency = 100000
-data_size = 1
+data_size = 1 # number of ts to transform
 '''SETTINGS END'''
 
 
@@ -191,4 +190,4 @@ if __name__ == "__main__":
         histograms[i] = np.flip(exe(ts[i], t_res, order, half_jump_magnitude,lower_lvl, upper_lvl),axis = 0).T
 
     histograms = np.squeeze(histograms, axis=0)
-    np.save(path + f"{histogram_dataset_name}.npy", histograms)
+    np.save(path + f"{histogram_dataset_name}", histograms)

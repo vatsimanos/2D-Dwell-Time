@@ -9,14 +9,14 @@ import Custom_layers as cl
 
 #----------------SETTINGS----------------#
 
-save_folder = "RESULT_FOLDER"
-save_location = f"/PATH_TO_RESULT_FOLDER/{save_folder}/" # path to folder were all results of the run are saved        
+save_folder = "RESULT_FOLDER" # name of the result folder
+save_location = f"/PATH_TO_RESULT_FOLDER/{save_folder}/" # path to the result folder
 
-data_names = "/PATH_TO_TXT/topology_datasets.txt"  # path to text file containing names of datasets     
-data_path= f'/PATH_TO_DATASETS/' # directory containing training files
+data_names = "topology_datasets.txt"
+data_path= f'/PATH_TO_DATASETS/' #  path to the training datasets (containing all the different Markov topologies)
 
 hist_dim = (60,60) # dimensions of 2D Dwell Time Histograms
-train_number = 1000000
+train_number = 10000000
 val_number = 180000
 test_number = 180000
 max_epochs = 1000

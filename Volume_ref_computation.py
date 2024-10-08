@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-path = r"PATH_TO_HISTOGRAMS/"
+path = r"2D_histograms/" # path to the 2D-histograms
 
-predicted_dir = f"NAME_OF_HISTOGRAM_FILE.npy"
+predicted_dir = f"PREDICTED_HISTOGRAMS.npy" # name of the predicted 2D-histograms file
 
 
 os.chdir(path)
